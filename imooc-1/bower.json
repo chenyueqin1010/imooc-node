@@ -1,0 +1,27 @@
+{
+  "name": "imooc电影网站",
+  "description": "nodejs mongoD",
+  "main": "app.js",
+  "authors": [
+    "andy chen"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "modejs",
+    "mongo",
+    "express",
+    "jade"
+  ],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}

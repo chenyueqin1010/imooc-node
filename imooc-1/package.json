@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "moment": "^2.18.1",
+    "underscore": "^1.8.3"
+  },
+  "name": "imooc",
+  "version": "1.0.0",
+  "description": "nodejs+mongoDB+jade+bootstrap",
+  "main": "app.js",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-concurrent": "^2.3.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-nodemon": "^0.4.2"
+  },
+  "scripts": {
+    "test": "node app.js"
+  },
+  "keywords": [
+    "node",
+    "mongo",
+    "jade"
+  ],
+  "author": "andy chen",
+  "license": "ISC"
+}

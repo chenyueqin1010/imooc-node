@@ -1,0 +1,49 @@
+extends ../layout
+
+block content
+	.container
+		.row
+			table.table.table-hover.table-bordered
+				thead
+					tr
+						th.text-center 电影名字
+						th.text-center 导演
+						th.text-center 国家
+						th.text-center 上映年份
+						th.text-center 录入时间
+						th.text-center 更新时间
+						th.text-center 查看
+						th.text-center 操作
+						th.text-center 删除
+				tbody
+					each item in movies
+						tr.text-center(class="item-id-#{item._id}")
+							td(style="vertical-align:middle") #{item.title}
+							td(style="vertical-align:middle") #{item.doctor}
+							td(style="vertical-align:middle") #{item.country}
+							td(style="vertical-align:middle") #{item.year}
+							td(style="vertical-align:middle") #{moment(item.meta.createAt).format("YYYY/MM/DD")}
+							td(style="vertical-align:middle") #{moment(item.meta.updateAt).format("YYYY/MM/DD")}
+							td(style="vertical-align:middle"): a(target="_blank",href="../movie/#{item._id}") 查看
+							td(style="vertical-align:middle"): a(target="_blank",href="../admin/update/#{item._id}") 修改
+							td(style="vertical-align:middle")
+								button.btn.btn-danger.del(type="button",data-id="#{item._id}") 删除
+	script(type='text/javascript').
+		$(function(){
+			$('.del').click(function(e){
+				var target = $(e.target);
+				var id = target.data('id');
+				var tr = $('.item-id-' + id);
+				
+				$.ajax({
+					type: 'DELETE',
+					url: '/admin/list?id=' + id
+				}).done(function(results){
+					if(results.success ===1){
+						if(tr.length > 0){
+							tr.remove();
+						}
+					}
+				})
+			})
+		})						
